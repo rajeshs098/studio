@@ -16,7 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Apply the font class directly here */}
       <body className={inter.className}>
         {children}
       </body>
