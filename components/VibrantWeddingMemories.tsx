@@ -1,8 +1,8 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Heart, ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { Menu } from 'lucide-react'; //
+import Image from 'next/image'
 import images from './images';
 
 export default function VibrantWeddingMemories() {
@@ -11,9 +11,7 @@ export default function VibrantWeddingMemories() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const sections = [' Home', 'Our Story', 'The Big Day', 'Photo Gallery', 'Guestbook']
-
-  
+  const sections = useMemo(() => [' Home', 'Our Story', 'The Big Day', 'Photo Gallery', 'Guestbook'], []);
 
   const memories = [
     { title: "First Look", description: "The moment we saw each other for the first time on our wedding day." ,img:"https://media.istockphoto.com/id/1175680550/photo/i-promise-to-love-you-till-the-end-of-times.jpg?s=612x612&w=0&k=20&c=IKj4JPj7ftyN0MBu4vUPAZDelj1iEXqDtLkVswVYmE8="},
@@ -151,24 +149,26 @@ export default function VibrantWeddingMemories() {
             <h2 className="text-4xl md:text-5xl font-light mb-12 text-center text-pink-600">Our Love Story</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <img
+                <Image
                   src="https://images.pexels.com/photos/2058070/pexels-photo-2058070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                   alt="Sarah and John's journey"
+                  width={1260}
+                  height={750}
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div className="space-y-6">
                 <p className="text-lg">
                   Our journey began on a sunny afternoon in Central Park, both of us reaching for the same book at a pop-up library. 
-                  It was Shakespeare's "A Midsummer Night's Dream" - fitting for what was to become our own dream-like romance.
+                  It was Shakespeare&apos;s &quot;A Midsummer Night&apos;s Dream&quot; - fitting for what was to become our own dream-like romance.
                 </p>
                 <p className="text-lg">
                   From that first laugh over our shared taste in literature, we knew there was something special between us. 
                   Our love story unfolded over cozy coffee dates, long walks through the city, and countless adventures.
                 </p>
                 <p className="text-lg">
-                  Each day, we fell more in love with each other's quirks, dreams, and the way we fit so perfectly together. 
-                  Now, as we embark on this new chapter as husband and wife, we're excited to share our joy with you through these cherished memories.
+                  Each day, we fell more in love with each other&apos;s quirks, dreams, and the way we fit so perfectly together. 
+                  Now, as we embark on this new chapter as husband and wife, we&apos;re excited to share our joy with you through these cherished memories.
                 </p>
               </div>
             </div>
@@ -186,9 +186,11 @@ export default function VibrantWeddingMemories() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <img
+                  <Image
                     src={`${memory.img}&text=${encodeURIComponent(memory.title)}`}
                     alt={memory.title}
+                    width={300}
+                    height={192}
                     className="w-full h-48 object-cover rounded-md mb-4"
                   />
                   <h3 className="text-xl font-semibold mb-2 text-pink-600">{memory.title}</h3>
@@ -211,9 +213,11 @@ export default function VibrantWeddingMemories() {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedImage(image)}
                 >
-                  <img 
+                  <Image 
                     src={image} 
                     alt={`Wedding photo ${index + 1}`} 
+                    width={300}
+                    height={256}
                     className="w-full h-64 object-cover" 
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-30 transition-opacity duration-300"></div>
