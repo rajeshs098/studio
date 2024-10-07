@@ -14,7 +14,7 @@ export default function VibrantWeddingMemories() {
   const sections = useMemo(() => [' Home', 'Our Story', 'The Big Day', 'Photo Gallery', 'Guestbook'], []);
 
   const memories = [
-    { title: "First Look", description: "The moment we saw each other for the first time on our wedding day." ,img:"https://media.istockphoto.com/id/1175680550/photo/i-promise-to-love-you-till-the-end-of-times.jpg?s=612x612&w=0&k=20&c=IKj4JPj7ftyN0MBu4vUPAZDelj1iEXqDtLkVswVYmE8="},
+    { title: "First Look", description: "The moment we saw each other for the first time on our wedding day." ,img:"https://images.pexels.com/photos/1456669/pexels-photo-1456669.jpeg?"},
     { title: "Vow Exchange", description: "Sharing our heartfelt promises surrounded by loved ones." ,img:"https://images.pexels.com/photos/1456669/pexels-photo-1456669.jpeg?"},
     { title: "First Dance", description: "Swaying to our favorite song as newlyweds.",img:"https://images.pexels.com/photos/15865306/pexels-photo-15865306/free-photo-of-bride-and-groom-dancing-with-fireworks-in-dark.jpeg?" },
     { title: "Cake Cutting", description: "Slicing into our beautiful wedding cake together." ,img:"https://images.pexels.com/photos/1345574/pexels-photo-1345574.jpeg?"},
